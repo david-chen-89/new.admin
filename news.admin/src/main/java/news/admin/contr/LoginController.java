@@ -30,7 +30,7 @@ public class LoginController {
 
 	@RequestMapping("/logout")
 	public String logout() {
-		httpSession.setAttribute(Session.USER_NAME, null);
+		httpSession.removeAttribute(Session.USER_NAME);
 		return Url.LOGIN;
 	}
 
@@ -38,9 +38,9 @@ public class LoginController {
 	public String login(@RequestParam("user_name") String username, @RequestParam("password") String password) {
 		if (accountService.valid(username, password)) {
 			httpSession.setAttribute("username", username);
-			return Url.HOME;
+			return "redirect:/" + Url.HOME;
 		} else {
-			return Url.LOGIN;
+			return "redirect:/" + Url.LOGIN;
 		}
 	}
 }

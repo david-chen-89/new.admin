@@ -56,7 +56,7 @@ function init_sidebar() {
 // TODO: This is some kind of easy fix, maybe we can improve this
 var setContentHeight = function () {
 	// reset height
-	$RIGHT_COL.css('min-height', $(window).height());
+    // $RIGHT_COL.css('min-height', $(window).height());
 
 	var bodyHeight = $BODY.outerHeight(),
 		footerHeight = $BODY.hasClass('footer_fixed') ? -10 : $FOOTER.height(),
@@ -64,7 +64,7 @@ var setContentHeight = function () {
 		contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
 
 	// normalize content
-	contentHeight -= $NAV_MENU.height() + footerHeight;
+	contentHeight -= $NAV_MENU.height() + footerHeight - 26;
 
 	$RIGHT_COL.css('min-height', contentHeight);
 };
