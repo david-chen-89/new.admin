@@ -8,8 +8,9 @@ public final class Constants {
 	}
 
 	public static class Url {
+		public static final String REDIRECT = "redirect:/";
+
 		public static final String HOME = "admin";
-		public static final String PASSWORD = "password";
 		public static final String LOGIN = "login";
 	}
 

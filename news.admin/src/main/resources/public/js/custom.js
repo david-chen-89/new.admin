@@ -152,7 +152,7 @@ $MENU_TOGGLE.on('click', function() {
 
 // Panel toolbox
 $(document).ready(function() {
-    $('.collapse-link').on('click', function() {
+    $(document).on('click', '.collapse-link',  function() {
         var $BOX_PANEL = $(this).closest('.x_panel'),
             $ICON = $(this).find('i'),
             $BOX_CONTENT = $BOX_PANEL.find('.x_content');
@@ -170,7 +170,7 @@ $(document).ready(function() {
         $ICON.toggleClass('fa-chevron-up fa-chevron-down');
     });
 
-    $('.close-link').click(function () {
+    $(document).on('click', '.close-link',  function() {
         var $BOX_PANEL = $(this).closest('.x_panel');
 
         $BOX_PANEL.remove();
@@ -5005,7 +5005,6 @@ if (typeof NProgress != 'undefined') {
 	   
 	   
 	$(document).ready(function() {
-				
 		init_sparklines();
 		init_flot_chart();
 		init_sidebar();
@@ -5039,8 +5038,9 @@ if (typeof NProgress != 'undefined') {
 		init_compose();
 		init_CustomNotification();
 		init_autosize();
-		init_autocomplete();
-				
+		init_autocomplete();			
 	});	
 	
-
+function init(){
+	init_DataTables();
+}

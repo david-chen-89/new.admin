@@ -38,9 +38,9 @@ public class LoginController {
 	public String login(@RequestParam("user_name") String username, @RequestParam("password") String password) {
 		if (accountService.valid(username, password)) {
 			httpSession.setAttribute("username", username);
-			return "redirect:/" + Url.HOME;
+			return Url.REDIRECT + Url.HOME;
 		} else {
-			return "redirect:/" + Url.LOGIN;
+			return Url.REDIRECT + Url.LOGIN;
 		}
 	}
 }
